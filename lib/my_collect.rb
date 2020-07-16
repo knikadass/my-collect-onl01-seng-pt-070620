@@ -1,13 +1,12 @@
 def my_collect(array)
+  names = []
   if block_given?
   i = 0 
     while i < array.length
-    my_collect(array) do |i|
-      i.upcase
-    yield(array[i])
+    names << yield(array[i])
      i += 1 
    end
-  array
+  names
  end
 end
 
